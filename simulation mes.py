@@ -37,28 +37,29 @@ warnings.filterwarnings('ignore')
 # Style CSS personnalisé
 st.markdown("""
 <style>
+    /* Appliquer des styles en fonction du mode (clair/sombre) */
     .stApp {
-        background-color: #f5f9ff;
+        background-color: var(--background-color);
     }
     .sidebar .sidebar-content {
-        background-color: #2c3e50;
-        color: white;
+        background-color: var(--sidebar-background-color);
+        color: var(--sidebar-text-color);
     }
     h1 {
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
+        color: var(--header-color);
+        border-bottom: 2px solid var(--primary-color);
         padding-bottom: 10px;
     }
     .stButton>button {
-        background-color: #3498db;
-        color: white;
+        background-color: var(--primary-color);
+        color: var(--button-text-color);
         border: none;
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
         transition: all 0.3s;
     }
     .stButton>button:hover {
-        background-color: #2980b9;
+        background-color: var(--primary-hover-color);
         transform: translateY(-2px);
     }
     .stSelectbox, .stMultiselect, .stSlider {
@@ -73,19 +74,49 @@ st.markdown("""
     .stTabs [data-baseweb="tab"] {
         height: 50px;
         padding: 0 25px;
-        background-color: #f1f1f1;
+        background-color: var(--tab-background-color);
         border-radius: 5px 5px 0 0;
         border: none;
     }
     .stTabs [aria-selected="true"] {
-        background-color: #3498db;
-        color: white;
+        background-color: var(--primary-color);
+        color: var(--tab-selected-text-color);
     }
     .css-1aumxhk {
-        background-color: #ffffff;
+        background-color: var(--card-background-color);
         border-radius: 0.5rem;
         padding: 2rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Définir les variables CSS pour le mode clair */
+    :root {
+        --background-color: #f5f9ff;
+        --sidebar-background-color: #2c3e50;
+        --sidebar-text-color: white;
+        --header-color: #2c3e50;
+        --primary-color: #3498db;
+        --primary-hover-color: #2980b9;
+        --button-text-color: white;
+        --tab-background-color: #f1f1f1;
+        --tab-selected-text-color: white;
+        --card-background-color: #ffffff;
+    }
+
+    /* Définir les variables CSS pour le mode sombre */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background-color: #0e1117;
+            --sidebar-background-color: #1a1a1a;
+            --sidebar-text-color: #e0e0e0;
+            --header-color: #e0e0e0;
+            --primary-color: #3498db;
+            --primary-hover-color: #2980b9;
+            --button-text-color: white;
+            --tab-background-color: #333333;
+            --tab-selected-text-color: white;
+            --card-background-color: #1a1a1a;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -832,6 +863,7 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
 
 
