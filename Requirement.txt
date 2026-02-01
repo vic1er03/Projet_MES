@@ -1,7 +1,6 @@
 streamlit
 pandas
 numpy
-matplotlib-base
 statsmodels
 pyreadstat
 openpyxl
