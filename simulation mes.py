@@ -180,37 +180,29 @@ def show_about():
     # Section Membres de l'équipe
     st.header("Notre Équipe")
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(3)
     
     with col1:
-        st.image("assets/photo1.jpg", width=150)
+        #st.image("assets/photo1.jpg", width=150)
         st.markdown("""
-        **Jean Dupont**  
-        *Économètre Senior*  
-        📧 jean.dupont@example.com  
+        **KABORE WEND-WAOGA AZARIA**  
+        *Économètre Junior*  
+        📧 azariaazaria473@gmail.com 
         🔗 [LinkedIn](https://linkedin.com)  
         Domaines : Modèles VAR, Séries Temporelles
         """)
     
     with col2:
-        st.image("assets/photo2.jpg", width=150)
+        #st.image("assets/photo2.jpg", width=150)
         st.markdown("""
-        **Marie Lambert**  
+        **KALEFACK**  
         *Data Scientist*  
-        📧 marie.lambert@example.com  
+        📧 KALEFACK@example.com  
         🔗 [LinkedIn](https://linkedin.com)  
         Domaines : Machine Learning, Visualisation
         """)
     
-    with col3:
-        st.image("assets/photo3.jpg", width=150)
-        st.markdown("""
-        **Ahmed Khan**  
-        *Développeur Full-Stack*  
-        📧 ahmed.khan@example.com  
-        🔗 [GitHub](https://github.com)  
-        Domaines : Développement Web, API
-        """)
+    
     
     # Section Partenaires
     st.header("Nos Partenaires")
@@ -841,4 +833,5 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
