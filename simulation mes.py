@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from statsmodels.tsa.vector_ar.var_model import VAR
 from statsmodels.tsa.stattools import adfuller, kpss
@@ -17,7 +16,7 @@ from fpdf import FPDF
 from sklearn.preprocessing import StandardScaler
 import warnings
 from PIL import Image
-
+import matplotlib.pyplot as plt
 # Configuration de la page avec logo
 st.set_page_config(
     layout="wide", 
@@ -833,6 +832,7 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
 
 
