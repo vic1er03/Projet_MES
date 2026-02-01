@@ -16,6 +16,19 @@ from io import BytesIO
 from fpdf import FPDF
 from sklearn.preprocessing import StandardScaler
 import warnings
+from PIL import Image
+
+# Configuration de la page avec logo
+st.set_page_config(
+    layout="wide", 
+    page_title="Analyse Économétrique des Transferts de Fonds",
+    page_icon="📊"
+)
+
+# Ajout du logo dans la sidebar
+with st.sidebar:
+    logo = Image.open("assets/logo.png")  # Chemin vers votre logo
+    st.image(logo, width=250)
 
 # Suppression des avertissements
 warnings.filterwarnings('ignore')
@@ -158,14 +171,71 @@ with st.sidebar:
             st.error(f"Erreur lors de l'importation des données: {str(e)}")
             st.stop()
 
+def show_about():
+    st.title("👥 À Propos de Notre Équipe")
+    
+    st.markdown("""
+    **Notre mission** : Fournir des analyses économétriques avancées pour comprendre 
+    l'impact des transferts de fonds sur les économies émergentes.
+    """)
+    
+    # Section Membres de l'équipe
+    st.header("Notre Équipe")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.image("assets/photo1.jpg", width=150)
+        st.markdown("""
+        **Jean Dupont**  
+        *Économètre Senior*  
+        📧 jean.dupont@example.com  
+        🔗 [LinkedIn](https://linkedin.com)  
+        Domaines : Modèles VAR, Séries Temporelles
+        """)
+    
+    with col2:
+        st.image("assets/photo2.jpg", width=150)
+        st.markdown("""
+        **Marie Lambert**  
+        *Data Scientist*  
+        📧 marie.lambert@example.com  
+        🔗 [LinkedIn](https://linkedin.com)  
+        Domaines : Machine Learning, Visualisation
+        """)
+    
+    with col3:
+        st.image("assets/photo3.jpg", width=150)
+        st.markdown("""
+        **Ahmed Khan**  
+        *Développeur Full-Stack*  
+        📧 ahmed.khan@example.com  
+        🔗 [GitHub](https://github.com)  
+        Domaines : Développement Web, API
+        """)
+    
+    # Section Partenaires
+    st.header("Nos Partenaires")
+    st.image("assets/partners.png", width=600)
+    
+    # Section Contact
+    st.header("📩 Contactez-nous")
+    st.markdown("""
+    📍 123 Rue des Analyses, Paris, France  
+    📞 +33 1 23 45 67 89  
+    🌐 [www.notresite.com](https://www.notresite.com)
+    """)
+
 # Onglets principaux
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+# Modifiez vos onglets pour inclure "À propos"
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "📈 Exploration", 
     "📉 Stationnarité", 
     "🔍 Modélisation", 
     "⚡ Simulations", 
     "📊 Résultats", 
-    "📝 Rapport"
+    "📝 Rapport",
+    "👥 À Propos"
 ])
 
 if uploaded_file and df is not None and len(selected_vars) >= 2:
@@ -751,6 +821,9 @@ if uploaded_file and df is not None and len(selected_vars) >= 2:
             for file in os.listdir(temp_dir):
                 os.remove(os.path.join(temp_dir, file))
             os.rmdir(temp_dir)
+
+    with tab7:
+        show_about()
 
 else:
     if not uploaded_file:
