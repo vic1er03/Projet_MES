@@ -169,16 +169,16 @@ with st.sidebar:
             st.error(f"Erreur lors de l'importation des données: {str(e)}")
             st.stop()
 
-def show_about():
-    st.title("👥 À Propos de Notre Équipe")
-    
-    st.markdown("""
-    **Notre mission** : Fournir des analyses économétriques avancées pour comprendre 
-    l'impact des transferts de fonds sur les économies émergentes.
-    """)
-    
-    # Section Membres de l'équipe
-    st.header("Notre Équipe")
+    def show_about():
+        st.title("👥 À Propos de Notre Équipe")
+        
+        st.markdown("""
+        **Notre mission** : Fournir des analyses économétriques avancées pour comprendre 
+        l'impact des transferts de fonds sur les économies émergentes.
+        """)
+        
+        # Section Membres de l'équipe
+        st.header("Notre Équipe")
     
     col1, col2 = st.columns(2)
     
@@ -833,6 +833,7 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
 
 
