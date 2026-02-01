@@ -180,7 +180,7 @@ def show_about():
     # Section Membres de l'équipe
     st.header("Notre Équipe")
     
-    col1, col2 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
         #st.image("assets/photo1.jpg", width=150)
@@ -833,6 +833,7 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
 
 
