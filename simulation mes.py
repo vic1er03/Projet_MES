@@ -33,9 +33,7 @@ with st.sidebar:
 # Suppression des avertissements
 warnings.filterwarnings('ignore')
 
-# Configuration de la page
-st.set_page_config(layout="wide", page_title="Analyse Économétrique des Transferts de Fonds", 
-                   page_icon="📊")
+
 
 # Style CSS personnalisé
 st.markdown("""
@@ -843,3 +841,4 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
