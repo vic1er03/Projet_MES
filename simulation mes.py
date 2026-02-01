@@ -206,13 +206,13 @@ def show_about():
     
     # Section Partenaires
     st.header("Nos Partenaires")
-    st.image("assets/partners.png", width=600)
+    #st.image("assets/partners.png", width=600)
     
     # Section Contact
     st.header("📩 Contactez-nous")
     st.markdown("""
-    📍 123 Rue des Analyses, Paris, France  
-    📞 +33 1 23 45 67 89  
+    📍 ISSEA, Yaounde, CAMEROUN 
+    📞 +237 6 59 35 12 77  
     🌐 [www.notresite.com](https://www.notresite.com)
     """)
 
@@ -833,5 +833,6 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
 
