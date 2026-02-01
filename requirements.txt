@@ -9,4 +9,3 @@ seaborn
 Pillow
 fpdf2
 scikit-learn
-
