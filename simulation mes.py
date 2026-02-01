@@ -26,7 +26,7 @@ st.set_page_config(
 
 # Ajout du logo dans la sidebar
 with st.sidebar:
-    logo = Image.open("assets/logo.png")  # Chemin vers votre logo
+    logo = Image.open("logo.png")  # Chemin vers votre logo
     st.image(logo, width=250)
 
 # Suppression des avertissements
@@ -832,6 +832,7 @@ else:
     - Stata (.dta)
     - SPSS (.sav)
     """)
+
 
 
 
