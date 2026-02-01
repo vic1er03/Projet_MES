@@ -1,3 +1,4 @@
+matplotlib
 streamlit
 pandas
 numpy
@@ -10,3 +11,4 @@ fpdf2
 scikit-lear
 matplotlib
 matplotlib.pyplot
+
